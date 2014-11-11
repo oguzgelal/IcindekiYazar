@@ -9,12 +9,8 @@ define( "DB_NAME", "icindekiyazar" );
 define( "DB_USER", "root" );
 define( "DB_PASSWORD", "root" );
 define( "DB_HOST", "localhost" );
-/*
-define( "DB_NAME", "turushan_icindekiyazar" );
-define( "DB_USER", "turushan_iyazar" );
-define( "DB_PASSWORD", "iy271993" );
-define( "DB_HOST", "localhost" );
-*/
+
+
 define( "TABLE_ENTRY", "entry" );
 define( "TABLE_POST", "post" );
 define( "TABLE_USER", "users" );
