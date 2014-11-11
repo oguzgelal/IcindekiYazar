@@ -1,0 +1,26 @@
+# Directory listing off
+Options -Indexes
+
+# Custom error pages
+ErrorDocument 404 /index.php?a=errorpage&b=Error404
+ErrorDocument 401 /index.php?a=errorpage&b=UnknownError
+ErrorDocument 400 /index.php?a=errorpage&b=UnknownError
+ErrorDocument 403 /index.php?a=errorpage&b=Forbidden
+ErrorDocument 500 /index.php?a=errorpage&b=InternalServerError
+
+# Web Server Debug
+<IfModule mod_gzip.c>
+  Header add X-Enabled mod_gzip
+</IfModule>
+<IfModule mod_deflate.c>
+  Header add X-Enabled mod_deflate
+</IfModule>
+<IfModule mod_rewrite.c>
+  Header add X-Enabled mod_rewrite
+</IfModule>
+
+# Clean URL
+RewriteEngine On
+RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/?$ /index.php?a=$1&b=$2&c=$3 [L]
+RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/?$ /index.php?a=$1&b=$2 [L]
+RewriteRule ^([a-zA-Z0-9]+)/?$ /index.php?a=$1 [L]
